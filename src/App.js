@@ -1,19 +1,26 @@
-import './App.scss';
-import Sidebar from "./components/Sidebar/Sidebar";
-import Feed from "./components/Feed/Feed";
-import Rightbar from "./components/Rightbar/Rightbar";
-import Footer from './components/Footer/Footer';
+import { Avatar, Box, Button, Container, HStack, Input, InputGroup, InputLeftAddon, InputLeftElement, VStack } from '@chakra-ui/react';
+import { QuestionOutlineIcon, Search2Icon, DragHandleIcon, ChevronDownIcon } from '@chakra-ui/icons'
+import Feed from './components/Feed';
+import Footer from './components/Footer';
+import Rightbar from './components/Rightbar';
+import Sidebar from "./components/Sidebar"
+import Topbar from './components/Topbar';
 
 function App() {
   return (
-    <div className="main-wrapper">
-      <div className="main-container">
+    <Box w="100%" fontSize='sm'>
+      <HStack h="100vh" alignItems="flex-start" spacing="0">
         <Sidebar />
-        <Feed />
-        <Rightbar />
-      </div>
+        <VStack width="100%" >
+          <Topbar />
+          <HStack>
+            <Feed />
+            <Rightbar />
+          </HStack>
+        </VStack>
+      </HStack>
       <Footer />
-    </div>
+    </Box>
   );
 }
 
