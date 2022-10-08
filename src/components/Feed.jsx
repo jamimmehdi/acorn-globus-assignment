@@ -1,10 +1,10 @@
-import { Badge, Box, Flex, HStack, SkeletonText, Skeleton, Text, VStack, SkeletonCircle, Stack } from '@chakra-ui/react';
+import { Badge, Box, Flex, HStack, Text, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setLoading } from './helper/postSlice';
+import { setLoading } from '../helper/postSlice';
 import Post from './Post';
 import SkeletonPost from './Skeleton';
-import { getPosts } from './utils/Services/ApiCall';
+import { getPosts } from '../utils/Services/ApiCall';
 const category = [
     { name: "interesting", badge: false, badgeValue: "" },
     { name: "featured", badge: true, badgeValue: "432" },

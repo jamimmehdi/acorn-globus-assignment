@@ -3,8 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import App from './App';
-import store from './components/app/store';
-import { newTheme } from './components/utils/ThemeStyle/Themes';
+import store from './app/store';
+import { newTheme } from './utils/ThemeStyle/Themes';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

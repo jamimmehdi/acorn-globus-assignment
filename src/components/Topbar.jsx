@@ -1,7 +1,7 @@
 import { Avatar, Button, HStack, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import { QuestionOutlineIcon, Search2Icon, DragHandleIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import { useDispatch } from 'react-redux';
-import { setSearchKeyword, setLoading } from './helper/postSlice';
+import { setSearchKeyword, setLoading } from '../helper/postSlice';
 import { useEffect, useState } from 'react';
 
 export default function Topbar() {
