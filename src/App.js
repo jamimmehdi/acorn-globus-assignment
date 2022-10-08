@@ -1,5 +1,4 @@
-import { Avatar, Box, Button, Container, HStack, Input, InputGroup, InputLeftAddon, InputLeftElement, VStack } from '@chakra-ui/react';
-import { QuestionOutlineIcon, Search2Icon, DragHandleIcon, ChevronDownIcon } from '@chakra-ui/icons'
+import { Box, HStack, VStack } from '@chakra-ui/react';
 import Feed from './components/Feed';
 import Footer from './components/Footer';
 import Rightbar from './components/Rightbar';
@@ -11,9 +10,9 @@ function App() {
     <Box w="100%" fontSize='sm'>
       <HStack h="100vh" alignItems="flex-start" spacing="0">
         <Sidebar />
-        <VStack width="100%" >
+        <VStack width="100%" h="100%">
           <Topbar />
-          <HStack>
+          <HStack w="100%" h="100%">
             <Feed />
             <Rightbar />
           </HStack>

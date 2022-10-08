@@ -11,9 +11,9 @@ const bodyMenu = [
 
 export default function Footer() {
     return (
-        <VStack w='100%' bg="white" px="5rem" pb="4rem">
-            <Box w="100%" px="3rem" borderTop="1px" borderTopColor="#ecf0f1">
-                <HStack borderBottom="1px" borderBottomColor="#ecf0f1">
+        <VStack w='100%' bg="white" px="5rem" pb="4rem" mt="5rem">
+            <Box bg="white" w="100%" px="3rem" borderTop="1px" borderTopColor="#ecf0f1">
+                <HStack borderBottom="1px" borderBottomColor="#ecf0f1" bg="white">
                     <HStack w="100%" py="1.5rem" spacing="1rem">
                         {footerMenu && footerMenu.map((menu, index) => (
                             <Text _hover={{ color: "#95a5a6", cursor: "pointer" }} key={index} fontSize='xs' color="#bdc3c7">{menu}</Text>

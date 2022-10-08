@@ -1,4 +1,4 @@
-import { Box, HStack, Stack, Text, VStack } from '@chakra-ui/react';
+import { Badge, Box, HStack, Stack, Text, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { IoBriefcaseOutline, IoDocumentTextOutline, IoPricetagsOutline, IoPersonOutline, IoBookmarkOutline, IoChatbubbleEllipsesOutline, IoFileTrayStackedOutline, IoMailOpenOutline } from "react-icons/io5";
@@ -14,9 +14,8 @@ const menu = [
   { name: "stack exchange", badge: false, badgeValue: "", icon: <IoFileTrayStackedOutline /> },
   { name: "inbox", badge: true, badgeValue: "24", icon: <IoMailOpenOutline /> },
 ]
-const selectedtab = "question";
 
-const Menu = ({ icon, name, activeTab, setActiveTab }) => {
+const Menu = ({ icon, name, badge, badgeValue, activeTab, setActiveTab }) => {
   const isSelected = activeTab === name;
   const layerStyle = isSelected ? 'activeTab' : 'baseTab';
   const activeSideBar = isSelected && 'activeTabSideBar';
@@ -25,12 +24,13 @@ const Menu = ({ icon, name, activeTab, setActiveTab }) => {
   const handleActiveTab = () => {
     setActiveTab(name);
   }
-  
+
   return (
-    <HStack onClick={handleActiveTab} direction="row" layerStyle={layerStyle} fontSize="xs" spacing="0.5rem" _hover={{ cursor: "pointer", color: "#95a5a6" }}>
+    <HStack w="100%" onClick={handleActiveTab} direction="row" layerStyle={layerStyle} fontSize="xs" spacing="0.5rem" _hover={{ cursor: "pointer", color: "#95a5a6" }}>
       <Box width="3px" h="1.5rem" mr="1rem" layerStyle={activeSideBar} />
       <Box layerStyle={activeIcon}>{icon}</Box>
       <Text fontWeight="medium">{name.toLocaleUpperCase()}</Text>
+      {badge && <Badge colorScheme='orange'>{badgeValue}</Badge>}
     </HStack>
   )
 }
@@ -45,7 +45,7 @@ export default function Sidebar() {
       </Box>
       <VStack alignItems="flex-start" spacing="1rem">
         {menu && menu.map((item, index) => (
-          <Menu key={index} icon={item.icon} name={item.name} activeTab={activeTab} setActiveTab={setActiveTab} />
+          <Menu key={index} badge={item.badge} badgeValue={item.badgeValue} icon={item.icon} name={item.name} activeTab={activeTab} setActiveTab={setActiveTab} />
         ))}
       </VStack>
     </VStack>

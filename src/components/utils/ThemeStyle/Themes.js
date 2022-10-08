@@ -15,6 +15,25 @@ export const newTheme = extendTheme({
         },
         selectedIcon: {
             color: "#f39c12"
+        },
+        baseCategory: {
+            color: "#bdc3c7"
+        },
+        activeCategory: {
+            bg: "#f88100",
+            color: "white"
+        },
+        scrollbar: {
+            '&::-webkit-scrollbar': {
+                width: '4px',
+            },
+            '&::-webkit-scrollbar-track': {
+                width: '6px',
+            },
+            '&::-webkit-scrollbar-thumb': {
+                background: "#bdc3c7",
+                borderRadius: '24px',
+            },
         }
     },
 });
